@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록, 테이블 태그 연습</title>
+    <style>
+		table, th, td {
+			border:1px solid #ccc;
+		}		
+		th {
+			padding:15px;   /* 셀 테두리와 내용 사이의 간격(패딩) */
+		}
+		tr > td:nth-child(odd) { 
+			width:120px;  /* 홀수번째 열의 너비 : 120px */
+		}
+		tr > td:nth-child(even) { 
+			width:300px;  /* 짝수번째 열의 너비 : 300px */
+		}
+	</style>
+
+</head>
+<!-- 목록 태그
+    1. 순서가 없는 목록
+        - ul 태그 이용
+        - 목록 작성: li 태그
+        - 글 머리 기호 변경: type(circle, square, disc)이용
+    
+    2. 순서가 있는 목록
+        - ol 태그 이용
+        - 글 머리 기호 변경: type이용
+    
+    3. 정의 목록
+        - dl 태그
+        - 제목 : dt
+        - 내용 : dd 
+    
+    4. 테이블 작성
+        - table 태그
+        - 행 삽입: tr
+        - 열 삽입: td
+        - 제목 셀 삽입: th 
+        - colspan: 셀의 너비 지정
+        - rowspan: 셀의 높이 지정
+        - 제목: caption, figure, figcaption 태그
+        
+        => thead(제목: 필드명), tbody(본문), tfoot(요약: 평균, 합계 등) -->
+
+<body>
+    <!-- 목록 -->
+    <ul type="circle">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+    </ul>
+
+    <ol type="I" start="8" reversed>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>오렌지</li>
+    </ol>
+
+    <ol>
+        <li>프로그래밍 언어</li>
+        <ul>
+            <li>html</li>
+            <li>python</li>
+            <li>java</li>
+            <li>c</li>
+        </ul>
+    </ol>
+
+
+    <h1>연습하기</h1>
+    <ul>
+        <li><b>과일</b></li>
+        <ol>
+            <li>사과</li>
+            <li>바나나</li>
+            <li>오렌지</li>
+        </ol>
+        <li><b>채소</b></li>
+        <ol type="1" start=4>
+            <li>상추</li>
+            <li>치커리</li>
+            <li>양배추</li>
+        </ol>
+    </ul>
+
+    <dl>
+        <dt>html</dt>
+        <dd>html은 웹 페이지를 작성하는 언어이다. </dd>
+        <dd>html5 버전을 사용한다. </dd>
+    </dl>
+
+    <!-- 테이블 -->
+   <table border="1">
+       <tr>
+           <th>1</th>
+           <th>2</th>
+           <th>3</th>
+       </tr>
+       <tr>
+           <td>a</td>
+           <td>b</td>
+           <td>c</td>
+       </tr>
+       <tr>
+           <td>A</td>
+           <td>B</td>
+           <td>C</td>
+       </tr>
+   </table>
+
+   <table border="1">
+       <thead>
+        <tr>
+            <th></th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+        </tr>
+       </thead>
+       <tbody>
+            <tr>
+                <td>1교시</td>
+                <td>영어</td>
+                <td>국어</td>
+                <td>과학</td>
+                <td>미술</td>
+                <td>기술</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>2교시</td>
+                <td>도덕</td>
+                <td>체육</td>
+                <td>영어</td>
+                <td colspan="2">과학</td>
+                <!-- <td>수학</td> -->
+            </tr>
+        </tfoot>
+   </table>
+
+   <!-- 셀 병합 -->
+   <table>
+       <tr>
+           <th>이름</th>
+           <td>&nbsp;&nbsp;&nbsp; </td>
+           <th>연락처</th>
+           <td>&nbsp;&nbsp;&nbsp; </td>
+       </tr>
+       <tr>
+           <th>주소</th>
+           <td colspan="3">&nbsp;&nbsp;&nbsp;</td>
+       </tr>
+       <tr>
+           <th>자기소개</th>
+           <td colspan="3">&nbsp;&nbsp;&nbsp;</td>
+       </tr>
+   </table>
+
+   <table>
+       <tr>
+           <th colspan="2">지역별 홍차</th>
+       </tr>
+       <tr>
+            <th rowspan="3">중국</th>
+            <td>정산소종</td>
+       </tr>
+       <tr>
+            <td>기문</td>
+        </tr>
+        <tr>
+            <td>운남</td>
+        </tr>
+        <tr>
+            <th rowspan="4">인도 및 스리랑카</th>
+            <td>아삼</td>
+        </tr>
+        <tr>
+            <td>실론</td>
+        </tr>
+        <tr>
+            <td>다질링</td>
+        </tr>
+        <tr>
+            <td>닐기리</td>
+        </tr>
+   </table>
+
+   <table>
+       <tr>
+           <th colspan="6">한국의 차</th>
+       </tr>
+       <tr>
+           <th rowspan="6">뿌리차</th>
+           <td>인삼차</td>
+           <th rowspan="9">과일차</th>
+           <td>수정과</td>
+           <th rowspan="5">잎차</th>
+           <td>뽕잎차</td>
+       </tr>
+       <tr>
+           <td>당귀차</td>
+           <td>유자차</td>
+           <td>감잎차</td>
+       </tr>
+       <tr>
+           <td>생각차</td>
+           <td>구기자차</td>
+           <td>솔잎차</td>
+       </tr>
+       <tr>
+           <td>칡차</td>
+           <td>대추차</td>
+           <td>국화차</td>
+       </tr>
+       <tr>
+           <td>둥굴레차</td>
+           <td>오미자차</td>
+           <td>이슬차</td>
+       </tr>
+       <tr>
+           <td>마차</td>
+           <td>매실차</td>
+           <th rowspan="4">기타</th>
+           <td>두충차차</td>
+       </tr>
+       <tr>
+           <th rowspan="3">곡물차</th>
+           <td>보리차</td>
+           <td>모과차</td>
+           <td>영지버섯차</td>
+       </tr>
+       <tr>
+           <td>옥수수차</td>
+           <td>산수유차</td>
+           <td>귤강차</td>
+       </tr>
+       <tr>
+           <td>현미차</td>
+           <td>탱자차</td>
+           <td>쌍화차</td>
+       </tr>
+   </table>
+   <br><br><br>
+
+   <figure>
+       <figcaption>부채와 자본금</figcaption>
+   <table>
+       <!-- <caption><b>부채와 자본금</b>
+       <p>부채와 자본금의 목록입니다. </p>
+        </caption> -->
+        <tr>
+            <td rowspan="2">자산: 현금</td>
+            <td>부채: 차입금</td>
+        </tr>
+        <tr>
+            <td>자본: 자본금</td>
+        </tr>
+   </table>
+    </figure>
+   <br><br><br>
+
+    <table>
+        <caption>연습</caption>
+        <colgroup>
+            <col>
+            <col span="2" style="background-color: orange;">
+            <col style="background-color:seagreen;">
+        </colgroup>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+   <br><br><br>
+</body>
+</html>

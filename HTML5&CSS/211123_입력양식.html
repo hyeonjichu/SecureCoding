@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        form 태그 사용
+            action: 전송 위치
+            method
+                post: 주소 변경없이 비밀스럽게 데이터 전달, 크기 제한 없음
+                get: 주소에 데이터를 입력해서 전달, 크기 제한 있음
+
+        label
+        1. <label 속성="값"><input~></label>
+        2. <label for="a123">내용</label><input id="a123" 속성="값">
+    -->
+    <form>
+        <label for="name">이름</label>
+        <input type="text" id="name"><br>
+
+        <label>이름2 <input type="text"></label><br>
+        <label for="name2">이름: <input type="text" id="name2"></label><br>
+
+        <label for="pw">비밀 번호</label>
+        <input type="password" id="password"><br>
+
+        <label>비밀 번호2 <input type="password"></label><br>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글꼴 관련 스타일</title>
+    <style>
+        /* fonts.google.com */
+        @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Nanum+Gothic:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo:wght@700&display=swap');
+        h1{
+            font-family: 'Comforter Brush';
+        }
+        p{
+            font-size: 20px;
+            font-weight: 800;
+            font-style: italic;
+            color: #ff0000;
+        }
+        .sfont{
+            font-variant: small-caps;
+        }
+        .underdeco{
+            text-decoration: underline;
+        }
+        .sdeco{
+            text-decoration: line-through;
+        }
+        .trans1{
+            text-transform: capitalize;
+        }
+        .trans2{
+            text-transform: uppercase;
+        }
+        .trans3{
+            text-transform: lowercase;
+        }
+        .redText{
+            color: red;
+        }.underblue{
+            color: blue;
+            text-decoration: underline;
+        }
+        *{
+            font-family: 'Nanum Myeongjo';
+
+        }
+    </style>
+</head>
+<body>
+    <h1>글꼴 관련 스타일 font</h1>
+    <h1>my name is hyeonja</h1>
+    <p>텍스트 스타일 중에서도 <span class="underdeco">글꼴</span>과 관련된 스타일이 있다.
+        글자들이 모여 이루어진 <span class="sdeco">텍스트</span>가 아닌 글자의 모양새를 바꿔준다.</p>
+        <span class="sfont">font-variant</span>는 글자를 작은 대문자로 작성한다.
+
+        <ul>
+            <li class="trans1">html</li>
+            <li class="trans2">css</li>
+            <li class="trans3">javascript</li>
+        </ul>
+    
+    <hr>
+    연습하기
+    <hr>
+    <h1 style="font-family: Nanum Myeongjo;">직원 채용</h1>
+    <h3>-채용 인원 : 00명</h3>
+    <h3>- 지원 자격</h3>
+    <ul>
+
+        <li><span  class="redText">학력 제한 없음</span></li>
+        <li>남자에 한하여</li>
+        <li>해외여행 및</li>
+        <li>외국어 능통자</li>
+
+    </ul>
+    ※당사는 전형 과정 중 성별, 연령에 차별을 두지 않습니다.
+
+    <h3>- 지원 서류</h3>
+    <ol>
+        <li><span class="underblue">이력서</span>(양식을 다운로드하여)</li>
+        <li><span class="underblue">자기소개서</span>(별도의 양식 없음)</li>
+        <li><span class="underblue">주민등록등본</span></li>
+        <li><span class="underblue">최종 졸업 증명서</span></li>
+    </ol>
+    <h3>- 원서 접수: 이메일 접수</h3>
+    ※ <span class="redText">2017년 12월 20일 까지 접수</span>를 받으며 채용 시 조기 마감될 수 있습니다. 
+
+</body>
+</html>

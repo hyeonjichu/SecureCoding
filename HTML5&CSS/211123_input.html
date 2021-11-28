@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>개인정보</legend>
+            <label>아이디: <input type="text" id="user_id" size="10"></label><br>
+            <label>비밀번호: <input type="password" id="user_pw" size="10"></label><br>
+            <label>email: <input type="text" id="mail"></label><br>
+            <label>이메일: <input type="email" id="email"></label><br>
+            <label>검색: <input type="search" id="se"></label><br>
+            <label>URL: <input type="url" id="url"></label><br>
+            <label>전화번호: <input type="tel" id="tel"></label><br>
+            <input type="submit" value="제출">
+        </fieldset>
+    
+
+        <fieldset>
+            <legend>등록정보</legend>
+            <label>참여 인원: 
+                <input type="number" id="number" min="0" max="10" step="1">
+            </label>
+            <label>지원물품:
+                <input type="number" id="stuffs" min="0" max="50" step="5" value="1">
+            </label><br>
+            <label>희망단계:
+                <input type="range" id="satis" min="1" max="3" value="1">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>신청과목</legend>
+            <label>회화
+                <input type="radio" name="subject" value="speaking" checked>
+            </label>
+            <label> 문법
+                <input type="radio" name="subject" value="grammar">
+            </label>
+            <label> 작문
+                <input type="radio" name="subject" value="writing">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>메일링</legend>
+            <label>해외단신
+                <input type="checkbox" name="mailing1" value="news">
+            </label>
+            <label>5분 회화
+                <input type="checkbox" name="mailing2" value="dialog">
+            </label>
+            <label>모닝팝스
+                <input type="checkbox" name="mailing3" value="pops">
+            </label>
+        </fieldset>
+    </form>
+
+    <br>
+    <form>
+        <fieldset>
+            <legend>연습하기</legend>
+            <b>시작 그룹</b><br>
+            <label>
+                <input type="radio" name="start" value="1" checked>
+                새 탭 페이지 열기
+            </label><br>
+            <label>
+                <input type="radio" name="start" value="2">
+                중단한 위치에서 계속하기
+            </label><br>
+            <label>
+                <input type="radio" name="start" value="3">
+                특정 페이지 또는 페이지 모음 열기
+            </label><br>
+            
+            <br>
+            <b>개인정보 및 보안</b><br>
+            <label>
+                <input type="checkbox" name="chk1" value="1" checked>
+                동기화 및 서비스
+            </label><br>
+            <label>
+                <input type="checkbox" name="chk2" value="2" checked>
+                로그인 허용
+            </label><br>
+            <label>
+                <input type="checkbox" name="chk3" value="3">
+                페이지 미리 로드
+            </label><br>
+        </fieldset>
+    </form>
+
+    <form>
+        <fieldset>
+            <legend>색 선택</legend>
+            <label>선호 색상
+                <input type="color" value="#000000">
+            </label>
+        </fieldset>
+
+        <h3>조회기간 선택</h3>
+        <label>시작일
+            <input type="date" max="2021-12-21">
+        </label>
+        <label>종료일
+            <input type="date">
+        </label>
+
+        <h3>시간 선택</h3>
+        <label>시작 시간
+            <input type="time" value="09:00">
+        </label>
+        <label>종료 시간
+            <input type="time" value="18:00">
+        </label>
+
+        <h3>날짜와 시간 선택</h3>
+        <label>시작 날짜와 시간
+            <input type="datetime-local" value="2021-11-23T09:00">
+        </label><br>
+        <label>종료 날짜와 시간
+            <input type="datetime-local" value="2021-11-23T18:00">
+        </label>
+    </form>
+
+    <br><br>
+    <h1>연습하기</h1>
+    <hr>
+    <h1>상품 주문서</h1>
+    <form>
+        <fieldset>
+            <legend><b>개인 정보</b></legend>
+            <label>이름
+                <input type="text" id="name" placeholder="여백없이 입력" autofocus required>
+            </label><br>
+            <label>연락처
+                <input type="tel" id="tel" value="010-1234-5678" readonly>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend><b>주문 날짜</b></legend>
+            <label>주문 날짜
+                <input type="datetime-local">
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>배송지 정보</legend>
+            <label>주소
+                <input type="text" size="40" required>
+            </label><br>
+            <label>전화번호
+                <input type="tel" required>
+            </label><br>
+            <label>메모
+                <textarea name="" id="" cols="40" rows="5" placeholder="메모를 입력하세요. "></textarea>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend><b>주문 정보</b></legend>
+            <label>
+                <input type="checkbox" name="chk1" id="1">
+                과테말라
+                <input type="number" min="0" max="10">개
+            </label><br>
+            <label>
+                <input type="checkbox" name="chk2" id="2">
+                인도네시아
+                <input type="number" min="0" max="10">개
+            </label><br>
+            <label>
+                <input type="checkbox" name="chk3" id="3">
+                탐라는도다
+                <input type="number" min="0" max="10">개
+            </label><br>
+        </fieldset>
+        <br>
+        <input type="submit" value="주문하기">
+        <input type="reset" value="다시 작성">
+    </form>
+
+    <br><br><br><br><br><br><br><br>
+</body>
+</html>

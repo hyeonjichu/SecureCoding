@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+        #container{
+            width: 90%;
+            border: 2px solid black;
+        }
+        .ins{
+            text-indent: 5%;
+        }
+        .ins2{
+            text-indent: 10%;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+        li{
+            line-height: 30px;
+        }
+        #container2{
+            width: 570px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="container" class="ins">
+        <h1>프런트엔드 개발자 지원서 </h1>
+        <p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+        <hr width="90%">
+        <form>
+            <p class="bold">개인정보</p>
+            <div class="ins2">
+                <p>이름 <input type="text" placeholder="공백없이 입력하세요"></p>
+                <p>연락처 <input type="text"></p>
+            </div>
+
+            <p class="bold">지원 분야</p>
+            <div class="ins2">
+                <p><input type="radio" name="chk">웹 퍼블리싱</p>
+                <p><input type="radio" name="chk">웹 애플리케이션 개발</p>
+                <p><input type="radio" name="chk">개발 환경 개선</p>
+            </div>
+
+            <p class="bold">지원 동기</p>
+
+            <div class="ins">
+                <textarea cols="60" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea><br>
+            </div>
+            <div class="ins">
+                <input type="submit" value="접수하기">
+                <input type="reset" value="다시 쓰기">
+            </div>
+        </form>
+    </div> -->
+    <div id="container2">
+        <h1>프런트엔드 개발자 지원서</h1>
+        <p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+        <hr width="90%">
+        <form>
+            <h4>개인 정보</h4>
+            <ul>
+                <li>
+                    <label>이름
+                        <input type="text" placeholder="공백없이 입력하세요">
+                    </label>
+                </li>
+                <li>
+                    <label>연락처
+                        <input type="tel">
+                    </label>
+                </li>
+            </ul>
+            <h4>지원 분야</h4>
+            <ul>
+                <li>
+                    <input type="radio" name="ra" value="1">웹 퍼블리싱
+                </li>
+                <li>
+                    <input type="radio" name="ra" value="2">웹 애플리케이션 개발
+                </li>
+                <li>
+                    <input type="radio" name="ra" value="3">개발 환경 개선
+                </li>
+            </ul>
+            <h4>지원 동기</h4>
+            <label>
+                <textarea cols="60" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+            </label>
+            <div>
+                <!-- <input type="submit" value="접수하기">-->
+                <button type="submit">접수하기</button>
+                <input type="reset" value="다시 쓰기">
+            </div>
+
+            <div>
+                <label>파일첨부
+                    <input type="file">
+                    <input type="image" src="dot.png" width="100" height="100">
+                </label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
