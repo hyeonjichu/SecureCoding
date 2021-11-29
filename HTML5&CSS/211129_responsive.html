@@ -9,14 +9,15 @@
         #wrapper{
             width: 96%; /* width: 960px; */
             margin: 0 auto;
+            font-size: 12px;
         }
         header{
-            width: 96%; /* width: 960px; */
+            width: 100%; /* width: 960px; */
             height: 120px;
             background-color: darkolivegreen;
         }
         .header-text{
-            font-size: 40px;
+            font-size: 2rem; /* font-size: 40px; */
             color: white;
             text-align: center;
             line-height: 120px;
@@ -27,6 +28,12 @@
             height: 400px;
             padding: 1.5625%; /* padding: 15px; */
             background-color: rgb(221, 130, 45);
+            font-size: 1.5rem;
+        }
+        /* 가변 이미지 css이용 */
+        .content img{
+            max-width: 100%;
+            height: auto;
         }
         .right-side{
             float: right;
@@ -34,22 +41,39 @@
             height: 400px;
             padding: 1.5625%; /* padding: 15px; */
             background-color: gray;
+            font-size: 1.5rem;
         }
         footer{
             clear:both;
             height: 120px;
             background-color: rgb(77, 136, 192);
-            width: 960px;
+            width: 100%;/* width: 960px; */
+            font-size: 1.5rem;
         }
     </style>
 </head>
 <body>
+
+    <!--박스모델 너비 정하기
+        box-sizing
+        속성값
+        1. content-box
+            = width + padding + border
+        2. border-box
+            너비 300
+            좌우패딩 30
+            테두리 2
+            300 - 60 = 240 - 4 = 236
+     -->
+
     <div id="wrapper">
         <header>
             <h1 class="header-text">고정 그리드 레이아웃</h1>
         </header>
         <section class="content">
             <h4>본문</h4>
+            <img src="../image/img1.jpg">
+            <img src="../image/img4.jpg" srcset="../image/img4.jpg 2x">
         </section>
         <aside class="right-side">
             <h4>사이드바</h4>
