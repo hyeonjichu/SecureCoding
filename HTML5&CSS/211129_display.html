@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        #block img{
+            display:block;
+            margin:10px;
+        }
+        li{
+            list-style-type: none;
+            display: inline-block;
+            margin: 20px;
+        }
+        .nonedisplay{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 화면 배치
+        -display
+        속성:
+            block: 블록 레벨로 지정정
+            inline: 블록 레벨 요소를 인라인 레벨로 변경(한 줄로 표현)
+            inline-block
+            none: 해당 요소를 화면에 표시하지 않음
+            (visibilty:hidden은 공간은 유지되지만 display:none은 공간도 사라짐)
+    -->
+    <div>
+        <ul>
+            <li>상품 종류</li>
+            <li>구입처</li>
+            <li>정보 확인</li>
+            <li>고객센터</li>
+        </ul>
+    </div>
+    <div class="nonedisplay">
+        <img src="../image/img1.jpg" alt="이미지 삽입">
+        <img src="../image/img1.jpg" alt="이미지 삽입">
+        <img src="../image/img1.jpg" alt="이미지 삽입">
+    </div>
+    <div id="block">
+        <img src="../image/img1.jpg" alt="이미지 삽입">
+        <img src="../image/img1.jpg" alt="이미지 삽입">
+        <img src="../image/img1.jpg" alt="이미지 삽입">
+    </div>
+</body>
+</html>
