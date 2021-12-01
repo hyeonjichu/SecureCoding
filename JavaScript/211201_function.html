@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hello(){
+            document.write("안녕 <br>");
+        }
+
+        function food(){
+            var f = prompt("먹고싶은 음식은 무엇입니까?");
+            document.write(f+"가 먹고 싶어요!");
+        }
+
+        function myName(name){
+            alert(name+"님, 안녕하세요.");
+        }
+
+        function add(a, b){
+            var c = a + b;
+            document.write(a+"+"+b+"="+c+"<br>");
+        }
+
+        // hello();
+        // food();
+        // myName('hj');
+        // add(3, 5);
+
+        function info(name, add){
+            document.write("이름은 "+name+"이고, 사는 지역은 "+add+"입니다.");
+        }
+        // var name = prompt("이름을 입력하세요.");
+        // var add = prompt("사는 지역을 입력하세요.");
+        // info(name, add);
+
+        function add(a, b){
+            var c = a + b;
+            document.write('함수 내부'+c);
+            return c;
+        }
+
+        // var value;
+
+        // value = add(5, 7);
+        // document.write(value + "<br>");
+
+        function circleS(r){
+            return r * r * 3.14;
+        }
+        function circleL(r){
+            return 2 * r * 3.14;
+        }
+        // var r = prompt("원의 반지름을 입력하세요.");
+        // document.write("원의 넓이는 "+circleS(r)+"입니다.<br>");
+        // document.write("원의 둘레는 "+circleL(r)+"입니다.");
+    </script>
+
+    <script>
+        /*
+        var myVar = 100; //전역 변수
+        test();
+        document.write(myVar);
+
+        function test(){
+            var myVar=50; // 지역 변수
+            myVar = 50; // 전역 변수(var가 없음)
+        }*/
+
+        /*
+        var num = 100;
+        num -= 10;
+        document.write("1=", num); //num=90;
+        document.write("<br>");
+
+        function numTest(){
+            var num = 3;
+            num += 20;
+        }
+        numTest();
+
+        document.write("2=", num); // num=110
+        */
+    </script>
+    <script>
+        var book = 26000;
+        var sale = 10;
+        var deli = 3000;
+
+        function howmuch(b, s, d){
+            return b*(1-s/100)+d;
+        }
+        document.write("총 금액은"+howmuch(book, sale, deli)+"원 입니다. ");
+        
+    </script>
+</body>
+</html>

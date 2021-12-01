@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var today = new Date();
+        var nowMonth = today.getMonth();
+        var nowDate = today.getDate();
+
+        document.write(today);
+        document.write(nowMonth);
+        document.write(nowDate);
+        document.write("<br>");
+
+        var num = 1.2345;
+        
+        var roundNum = Math.round(num);
+        var floorNum = Math.floor(num);
+        var maxNum = Math.max(10, 3, 55);
+        var minNum = Math.min(10, 2, 55);
+
+        document.write("roundNum="+roundNum+"<br>");
+        document.write("floorNum="+floorNum+"<br>");
+        document.write("maxNum="+maxNum+"<br>");
+        document.write("minNum="+minNum+"<br>");
+    </script>
+</body>
+</html>
