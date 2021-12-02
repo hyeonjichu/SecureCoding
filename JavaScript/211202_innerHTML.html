@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+</head>
+<body>
+    <div>
+        <h1>점수 계산</h1>
+        - 국어 : <span id="kor"></span>점<br>
+        - 영어 : <span id="eng"></span>점<br>
+        - 수학 : <span id="math"></span>점<br>
+        - 합계 : <span id="sum"></span>점<br>
+        - 평균 : <span id="avg"></span>점<br>
+    </div>
+    <button onclick="sumAvg(80,90,100)">평균 구하기</button>
+    <script>
+        function sumAvg(kor, eng, math){
+            var sum;
+            var avg;
+
+            sum = kor + eng + math;
+            avg = sum / 3;
+            
+            document.getElementById("kor").innerHTML = kor;
+            document.getElementById("eng").innerHTML = eng;
+            document.getElementById("math").innerHTML = math;
+            document.getElementById("sum").innerHTML = sum;
+            document.getElementById("avg").innerHTML = avg;
+
+        }
+    </script>
+    <div>
+        <h1>책 가격 계산하기</h1>
+        - 책값 : <span id="price"></span>원<br>
+        - 할인율 : <span id="rate"></span>% <br>
+        - 배송료 : <span id="deli"></span>원<br>
+        - 지불금액 : <span id="pay"></span>원<br>
+        <button onclick="money(26000, 10, 3000)">지불금액 확인하기</button>
+        
+    </div>
+    <script>
+        function money(m, r, d){
+            var pay = m * (1 - r/100) + d;
+            document.getElementById("price").innerHTML = m;
+            document.getElementById("rate").innerHTML = r;
+            document.getElementById("deli").innerHTML = d;
+            document.getElementById("pay").innerHTML = pay;
+        }
+    </script>
+</body>
+</html>

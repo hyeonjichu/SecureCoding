@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 800px;
+            height: 550px;
+            margin: 0 auto;
+            padding: 20px 10px 0 50px;
+            border: 1px solid gray;
+        }
+        #header{font-size: 2em;}
+        #pimg{margin: 20px 50px;}
+        #pimg img{border: 1px solid gray;}
+        #desc{width: 300px;}
+        #pimg, #desc{float: left;}
+        h1{font-size: 1.8em;}
+        h2{font-size: 1.3em; color: blue;}
+        p{font-size: 0.9em; line-height: 1.4em;}
+        .accent{font-weight: 700; font-size: 1em; font-style: italic;}
+        .bright{color: blue;}
+        .small{width: 60px; height: 60px;}
+        .big{width: 200px; height: 200px;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="header">칵테일의 기원</h1>
+        <div id="pimg">
+            <img src="../HTML5&CSS/image/dish5.jpg" class="big" id="bimg">
+            <div>
+                <img src="../HTML5&CSS/image/1.jpg" class="small">
+                <img src="../HTML5&CSS/image/2.jpg" class="small">
+                <img src="../HTML5&CSS/image/3.jpg" class="small">
+            </div>
+        </div>
+        <div id="desc">
+            <h2>information</h2>
+            <p>복잡 미묘한 맛을 지닌 보건음료이다. 세계 각국의 술을 <span class="accent">그대로 마시지 않고</span> 마시는 사람의 기호와 취향에 맞추어 독특한 맛과 빛깔을 내도록 하는, 술의 예술품이라 할 수 있다.</p>
+            <p><span class="accent">칵테일이라는 명칭의 유래</span>는 여러 설이 있으나, 1795년경 미국 루이지애나주(州) 뉴올리언스에 이주해온 A.A.페이쇼라는 약사가 달걀 노른자를 넣은 음료를 조합해서 프랑스어로 코크티에(coquetier)라고 부른 데서 비롯되었다는 설이 있다.</p>
+            <h2> 칵테일 종류</h2>    
+            <p class="bright">준벅, 코스모폴리탄, 모히또, 프렌치75, 피치크러쉬</p>
+        </div>
+    </div>
+    <script>
+        // document.getElementById("desc").onclick=function(){
+        //     this.style.fontSize="2em";
+        // }
+        document.getElementById("header").onclick=function(){
+            this.style.fontSize="3em";
+        }
+        document.getElementsByClassName("accent")[0].style.textDecoration="underLine";
+        document.getElementsByClassName("accent")[1].style.color="orange";
+        
+        document.getElementsByTagName("h2")[0].style.backgroundColor="skyblue";
+        document.getElementsByTagName("p")[0].style.fontSize="1em";
+        
+        document.querySelector("#header").style.textDecoration="underLine";
+        document.querySelectorAll(".accent")[0].style.backgroundColor="gray";
+
+        document.querySelector("#pimg > img").setAttribute("src", "../HTML5&CSS/image/dish3.jpg");
+
+        var bigPic = document.querySelector("#bimg");
+        var smallPic = document.querySelectorAll(".small");
+        function showBig(){
+            var newPic = this.src;
+            bigPic.setAttribute("src", newPic);
+        }
+
+        for(var i = 0; i < smallPic.length; i++){
+            smallPic[i].onclick = showBig;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .small{width: 60px; height: 60px;}
+        .big{width: 240px; height: 240px;}
+    </style>
+</head>
+<body>
+    <!-- <div>
+        <img src="../HTML5&CSS/image/dish1.jpg" class="big">
+    </div>
+    <img src="../HTML5&CSS/image/1.jpg" class="small" id="1">
+    <img src="../HTML5&CSS/image/2.jpg" class="small" id="2">
+    <img src="../HTML5&CSS/image/3.jpg" class="small" id="3">
+    <img src="../HTML5&CSS/image/dish3.jpg" class="small" id="4">
+
+    <script>
+        var bigPic = document.querySelector(".big");
+        var smallPic = document.querySelectorAll(".small");
+
+        function big(){
+            var newsrc = this.src;
+            //document.write(newsrc);
+            bigPic.setAttribute("src", newsrc);
+        }
+
+        for(var i = 0; i < smallPic.length; i++){
+            smallPic[i].onclick=big;
+        }
+
+    </script> -->
+    <div>
+        <img src="../HTML5&CSS/image/1.jpg" id="pic">
+    </div>
+
+    <script>
+        var pic = document.querySelector("#pic");
+        //pic.onclick=changePic;
+        pic.addEventListener("mouseover", changePic);
+        pic.addEventListener("mouseout", originPic);
+
+        function changePic(){
+            pic.src="../HTML5&CSS/image/2.jpg";
+        }
+        function originPic(){
+            pic.src = "../HTML5&CSS/image/1.jpg";
+        }
+    </script>
+</body>
+</html>

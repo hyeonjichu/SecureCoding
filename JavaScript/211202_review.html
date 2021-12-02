@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a, b){
+            return a+b;
+        }
+        var num = add(5, 7);
+        document.write(num);
+    </script>
+    <script>
+        //1feet = 12inch, 1inch=2.54cm
+        var num = prompt("cm를 입력하세요.");
+        function cmToInch(n){
+            return n/2.54;
+        }
+        function cmToFeet(n){
+            return (n/2.54)/12;
+        }
+        document.write(num+"cm = "+cmToInch(num)+"inch = "+cmToFeet(num)+"feet");
+    </script>
+    <script>
+        var js = {
+            name:"C# programming",
+            date:"2019년 12월 10일",
+            author:"윤인성",
+            publish:"한빛아카데미",
+            design:"김연정"
+        }
+        function Book (이름, 초판_발행, 지은이, 펴낸이, 펴낸곳, 책임편집, 기획, 편집, 디자인) {
+            this.이름 = 이름;
+            this.초판_발행 = 초판_발행;
+            this.지은이 = 지은이;
+            this.펴낸이 = 펴낸이;
+            this.펴낸곳 = 펴낸곳;
+            this.책임편집 = 책임편집;
+            this.기획 = 기획;
+            this.편집 = 편집;
+            this.디자인 = 디자인;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <div>
+        <img src="../HTML5&CSS/image/1.jpg" id="cover">
+    </div>
+    <button id="btn">클릭하기</button>
+    <script>
+        // var coverimage = document.querySelector("#cover");
+        // coverimage.onclick=function(){
+        //     alert("눌렸습니다.");
+        // }
+        var coverimage = document.querySelector("#cover");
+        coverimage.onmouseover=function(){
+            coverimage.style.border="2px solid black"
+        }
+        var btn = document.querySelector("#btn");
+        btn.onclick=function(){
+            alert("클릭했습니다. ");
+        }
+
+    </script>
+</body>
+</html>
