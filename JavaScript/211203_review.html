@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list{
+            list-style-type: none;
+            color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        <h1>ipsum quis consectetur sint ullamco. </h1>
+    </div>
+    <div>
+        <p id="text">Labore do officia velit mollit eu pariatur. 
+            Do aute sunt aute dolore labore incididunt Lorem mollit 
+            laborum adipisicing. Ipsum adipisicing amet ut in. 
+            Lorem incididunt sunt et excepteir amet occaecat culpa 
+            omcododimt exercitation. Labore excepteur Lorem voluptate 
+            ipsum magna consequat eiusmod ex anim labore pariatur eiusmod. 
+            Excepteur amet non magnaest.
+        </p>
+    </div>
+    <script>
+        document.querySelector("#text").onclick=function(){
+            this.style.color="blue";
+            this.style.backgroundColor="lightgray";
+        } 
+    </script> -->
+    <div>
+        <h1>할 일 목록</h1>
+    </div>
+    
+    <ul id="list">
+        <li><span class="task">할 일 1</span></li>
+        <li><span class="task">할 일 2</span></li>
+        <li><span class="task">할 일 3</span></li>
+        <li><span class="task">할 일 4</span></li>
+        <li><span class="task">할 일 5</span></li>
+    </ul>
+    
+    <script>
+        var tasks = document.querySelectorAll(".task");
+        for(var i = 0; i < tasks.length; i++){
+            tasks[i].onmouseover=function(){
+                this.style.color="black";
+            };
+            tasks[i].onmouseout=function(){
+                this.style.color="lightgray";
+            }
+        }
+        // for(var i = 0; i<tasks.length; i++){
+        //     tasks[i].addEventListener("onmouseover", "mouseout",function(){
+        //         this.tasks.style.color="gray";
+        //     });
+        // }
+    </script>
+</body>
+</html>
