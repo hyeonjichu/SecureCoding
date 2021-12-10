@@ -23,9 +23,7 @@ public class MainClass {
 				for(int i=0; i<number.length-1; i++) {
 					for(int j=i+1; j<number.length; j++) {
 						if(number[i] > number[j]) {
-							tmp = number[i];
-							number[i] = number[j];
-							number[j] = tmp;
+							swap(number, i, j);
 						}
 					}
 				}
@@ -35,9 +33,7 @@ public class MainClass {
 				for(int i=0; i<number.length-1; i++) {
 					for(int j=i+1; j<number.length; j++) {
 						if(number[i] < number[j]) {
-							tmp = number[i];
-							number[i] = number[j];
-							number[j] = tmp;
+							swap(number, i, j);
 						}
 					}
 				}
@@ -48,4 +44,13 @@ public class MainClass {
 		}
 		System.out.println(Arrays.toString(number));
 	}
+	
+	static void swap(int array[], int i, int j) {
+		int tmp;
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+				
+	}
+	
 }

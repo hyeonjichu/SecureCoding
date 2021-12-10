@@ -11,15 +11,7 @@ public class hw1 {
 		String strNum1 = "";
 		while(true) {
 			strNum1 = scan.next();
-			boolean chk = true;
-			for(int i=0; i<strNum1.length(); i++) {
-				int n = (int)strNum1.charAt(i);
-				if(n < 48 || n > 57) {
-					chk = false;
-					break;
-				}
-			}
-			if(chk) {
+			if(chk(strNum1)) {
 				break;
 			}
 			System.out.println("숫자를 입력하세요.");
@@ -40,43 +32,46 @@ public class hw1 {
 		String strNum2 = "";
 		while(true) {
 			strNum2 = scan.next();
-			boolean chk = true;
-			for(int i=0; i<strNum2.length(); i++) {
-				int n = (int)strNum2.charAt(i);
-				if(n < 48 || n > 57) {
-					chk = false;
-					break;
-				}
+			if(chk(strNum2)) {
+				break;
 			}
-			if(chk == false) {
-				System.out.println("숫자를 입력하세요.");
-				continue;
-			}
-			break;
+			System.out.println("숫자를 입력하세요.");
 		}
 		
 		int num1 = Integer.parseInt(strNum1);
 		int num2 = Integer.parseInt(strNum2);
 		
-		int result=0;
-		
+		System.out.println("연산 결과 = "+ calc(num1, oper, num2));
+	}
+	
+	static boolean chk(String str) {
+		boolean chk = true;
+		for(int i=0; i<str.length(); i++) {
+			int n = (int)str.charAt(i);
+			if(n < 48 || n > 57) {
+				chk = false;
+				break;
+			}
+		}
+		return chk;
+	}
+	
+	static int calc(int n1, String oper,int n2) {
+		int result = 0;
 		switch(oper) {
 			case "+":
-				result = num1 + num2;
+				result = n1 + n2;
 				break;
 			case "-":
-				result = num1 - num2;
+				result = n1 - n2;
 				break;
 			case "*":
-				result = num1 * num2;
+				result = n1 * n2;
 				break;
 			case "/":
-				result = num1 / num2;
+				result = n1 / n2;
 				break;
-			default:
-				System.out.println("연산자를 잘못 입력하셨습니다.");
 		}
-		
-		System.out.println("연산 결과 = "+ result);
+		return result;
 	}
 }
