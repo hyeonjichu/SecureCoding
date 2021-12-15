@@ -29,17 +29,13 @@ public class MainClass {
 				dao.insert();
 				break;
 			case 2:
-				System.out.println("삭제할 이름을 입력해 주세요.");
-				String dName = sc.next();
-				dao.delete(dName);
+				dao.delete();
 				break;
 			case 3:
 				dao.select();
 				break;
 			case 4:
-				System.out.println("수정할 학생의 이름을 입력해 주세요.");
-				String uName = sc.next();
-				dao.update(uName);
+				dao.update();
 				break;
 			case 5:
 				dao.alldata();
