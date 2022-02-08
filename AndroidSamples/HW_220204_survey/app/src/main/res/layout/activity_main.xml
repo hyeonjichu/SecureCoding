@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <TextView
+            android:text="질문 4) 당신의 연령대를 선택해 주십시오"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.218"
+            app:layout_constraintVertical_bias="0.673"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="설문조사"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintVertical_bias="0.054"/>
+    <TextView
+            android:text="이름: "
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.118"
+            app:layout_constraintVertical_bias="0.126"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.32" app:layout_constraintVertical_bias="0.106"/>
+    <TextView
+            android:text="질문 1) 영어로 대화할 수 있습니까?"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.195"
+            app:layout_constraintVertical_bias="0.189"/>
+    <TextView
+            android:text="질문 2) 영어 외에 관심 있는 언어는?"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.195"
+            app:layout_constraintVertical_bias="0.308"/>
+    <TextView
+            android:text="질문 3) 당신의 의견을 작성해 주십시오"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.21"
+            app:layout_constraintVertical_bias="0.431"/>
+    <Spinner
+            android:layout_width="305dp"
+            android:layout_height="51dp" android:id="@+id/spinner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.22" app:layout_constraintVertical_bias="0.739"/>
+    <Button
+            android:text="결과"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/resultBtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.13" app:layout_constraintVertical_bias="0.814"/>
+    <CheckBox
+            android:text="프랑스어"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/chk2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.335" app:layout_constraintVertical_bias="0.364"/>
+    <CheckBox
+            android:text="독일어"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/chk1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.13" app:layout_constraintVertical_bias="0.364"/>
+    <EditText
+            android:layout_width="293dp"
+            android:layout_height="171dp"
+            android:inputType="textMultiLine"
+            android:gravity="start|top"
+            android:ems="10"
+            android:id="@+id/comment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.218" app:layout_constraintVertical_bias="0.555"/>
+    <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="293dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.245"
+            app:layout_constraintHorizontal_bias="0.224">
+        <RadioButton
+                android:text="예"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/yes" android:layout_weight="1"/>
+        <RadioButton
+                android:text="아니오"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/no" android:layout_weight="1"/>
+        <RadioButton
+                android:text="모르겠습니다"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/dont" android:layout_weight="1"/>
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
