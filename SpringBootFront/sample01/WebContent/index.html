@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<table border=1 id="tab">
+
+</table>
+
+<button type="button">클릭</button>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("button").click(function(){
+		//alert("click");
+		/* $.ajax({		//axios(react, vue)
+			url:"http://localhost:3000/base",
+			type:"get",
+			success:function(data){
+				alert("success");
+				$("#demo").text(data);
+			},
+			error:function(){
+				alert("error");
+			}
+		}); */
+		
+		/* $.ajax({
+			url:"http://localhost:3000/connParamGet",
+			type:"get",
+			data:{title:"제목입니다."},
+			success:function(data){
+				alert("success");
+				$("#demo").text(data);
+			},
+			error:function(){
+				alert("error");
+			}
+		}); */
+		
+		/* $.ajax({
+			url:"http://localhost:3000/getMember",
+			type:'get',
+			success:function(json){
+				alert(JSON.stringify(json));
+				$("#demo").append(json.id + "<br>");
+				$("#demo").append(json.pwd + "<br>");
+				$("#demo").append(json.name + "<br>");
+				$("#demo").append(json.email + "<br>");
+			},
+			error:function(){
+				alert("error");
+			}
+		}); */
+		
+		/* $.ajax({
+			url:"http://localhost:3000/getMemberList",
+			type:'get',
+			data:{id:"chu", pwd:"123", name:"츄", email:"서울@dd.com", auth:22},
+			success:function(data){
+				//alert(JSON.stringify(data));
+				//alert(data.length);
+				
+				let str = "";
+				for(i=0; i<data.length; i++){
+					str += "<tr>";
+					str += "<td>" + data[i].id + "</td>";
+					str += "<td>" + data[i].pwd + "</td>";
+					str += "<td>" + data[i].name + "</td>";
+					str += "</tr>";
+				}
+				$("#tab").append(str);
+			},
+			error:function(){
+				alert("error");
+			}
+		});  */
+		
+		$.ajax({
+			url:"http://localhost:3000/dbTest",
+			type:"get",
+			success:function(data){
+				//alert(JSON.stringify(data));
+				let str = "";
+				for(i=0; i<data.length; i++){
+					str += "<tr>";
+					str += "<td>" + data[i].id + "</td>";
+					str += "<td>" + data[i].pwd + "</td>";
+					str += "<td>" + data[i].name + "</td>";
+					str += "</tr>";
+				}
+				$("#tab").append(str);
+			},
+			error:function(data){
+				alert("error");
+			}
+		});
+	});
+});
+</script>
+
+</body>
+</html>
