@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>bbsUpdate</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<form id="frm">
+	<input type="hidden" name="id" id="userid">
+	<input type="hidden" name="seq" id="seq">
+	<table border="1" align="center">
+	<col width="200"><col width="500">
+		<tr>
+			<th>작성자</th>
+			<td id="id"></td>
+		</tr>
+		<tr>
+			<th>제목</th>
+			<td><input id="title" name="title"></td>
+		</tr>
+		<tr>
+			<th>내용</th>
+			<td>
+				<textarea rows="10" cols="30" id="content" name="content"></textarea>
+			</td>
+		</tr>
+	</table>
+</form>
+<div align="center">
+	<button id="updateBtn">수정하기</button>
+</div>
+<script type="text/javascript">
+const url = new URL(location.href);
+const urlParams = url.searchParams;
+let seq = urlParams.get("seq");
+$("#seq").val(seq);
+//alert(seq);
+
+let login = sessionStorage.getItem("login");
+let id = JSON.parse(login).id;
+$("#userid").val(id);
+
+$.ajax({
+	url:"http://localhost:3000/bbsdetail",
+	type:"get",
+	data:{"seq":seq},
+	success:function(bbs){
+		//alert("success");
+		//alert(JSON.stringify(bbs));
+		
+		$("#id").text(bbs.id);
+		$("#title").val(bbs.title);
+		$("#content").val(bbs.content);
+		
+	},
+	error:function(){
+		alert("error");
+	}
+});
+
+$(document).ready(function(){
+	$("#updateBtn").click(function(){
+		if(confirm("수정하시겠습니까?")){
+			let params = $("#frm").serialize()
+			$.ajax({
+				url:"http://localhost:3000/bbsUpdate",
+				type:"get",
+				data:params,
+				success:function(data){
+					if(data=="YES"){
+						alert("수정되었습니다.");
+						location.href="bbsdetail.html?seq="+seq;
+					}else{
+						alert("수정 에러");
+					}
+				},
+				error:function(){
+					alert("error");
+				}
+			});
+		}
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>account</title>
+
+<style type="text/css">
+#app{
+	margin: auto;
+	margin-top: 60px;
+	width: 60%;
+	border: 3px solid #8ac007;
+	padding: 10px;
+}
+p{
+	font-size: 8px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>회원 가입</h1>
+<div id="app">
+	<form id="frm">
+		<table border="1">
+			<tr>
+				<td>아이디</td>
+				<td>
+					<input type="text" id="userid" placeholder="아이디" size="20">
+					<p id="idchk"></p>
+					<button type="button" id="idchkBtn">중복확인</button> 
+				</td>
+			</tr>
+			<tr>
+				<td>사용아이디</td>
+				<td>
+					<input type="text" id="id" name="id" size="20" readonly> 
+				</td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td>
+					<input type="password" id="pwd" name="pwd" placeholder="비밀번호" size="20"> 
+				</td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td>
+					<input type="text" id="name" name="name" placeholder="이름" size="20"> 
+				</td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td>
+					<input type="text" id="email" name="email" placeholder="이메일" size="20"> 
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button type="button" id="account">회원가입</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#idchkBtn").click(function(){
+		$.ajax({
+			url:"http://localhost:3000/getId",
+			type:"post",
+			data:{"id": $("#userid").val() },
+			success:function(data){
+				//alert("success");
+				if(data.trim() == 'OK'){
+					$("#idchk").html("이 아이디는 사용할 수 있습니다.");
+					$("#id").val($("#userid").val());
+				}else{
+					$("#idchk").html("이 아이디는 사용중입니다.");
+					$("#userid").val("");
+					$("#userid").focus();
+				}
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	});
+	
+	$("#account").on("click", function () {		
+		//alert('account');
+		let params = $("#frm").serialize()
+		console.log(params);
+		// let params = { id:$("#id").val(), pwd:$("#pwd").val(), name:$("#name").val(), email:$("#email").val() };
+		
+		$.ajax({
+			url:"http://localhost:3000/addmember",
+			type:"post",
+			// data:{ id:$("#id").val(), pwd:$("#pwd").val(), name:$("#name").val(), email:$("#email").val() },
+			data:params,
+			success:function(data){
+				//alert("success");
+				if(data == "YES"){
+					alert('가입성공');
+					location.href = "login.html";
+				}else{
+					alert('가입실패');
+				}
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+		
+	});
+});
+</script>
+
+</body>
+</html>

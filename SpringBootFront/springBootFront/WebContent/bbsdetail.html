@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>bbsdetail</title>
+</head>
+<body>
+
+<table border="1" align="center">
+<col width="200"><col width="500">
+	<tr>
+		<th>작성자</th>
+		<td id="id"></td>
+	</tr>
+	<tr>
+		<th>제목</th>
+		<td id="title"></td>
+	</tr>
+	<tr>
+		<th>작성일</th>
+		<td id="wdate"></td>
+	</tr>
+	<tr>
+		<th>조회수</th>
+		<td id="readcount"></td>
+	</tr>
+	<tr>
+		<th>내용</th>
+		<td>
+			<textarea rows="10" cols="30" id="content" readonly></textarea>
+		</td>
+	</tr>
+</table>
+<br>
+<div align="center">
+	<button id="reply">답글</button>
+	<button id="bbsupdate">수정</button>
+	<button id="bbsdelete">삭제</button>
+	<button id="bbslist" onclick="location.href='bbslist.html'">목록</button>
+</div>
+<br><br>
+<div align="center" id="commentArea">
+	<table border="1">
+		<tr>
+			<th>댓글</th>
+			<td><textarea rows="5" cols="80" id="comment" name="comment"></textarea></td>		
+			<td><button id="commentBtn">댓글 등록</button></td>		
+		</tr>
+	</table>
+</div>
+<div align="center" style="display:none" id="replyDiv">
+	<form id="frm">
+		<table border="1">
+		<col width="200"><col width="700">
+			<input type="hidden" id="seq" name="seq">
+			<tr>
+				<th>작성자</th>
+				<td><input id="rid" name="id" readonly></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input id="rtitle" name="title"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea id="rcontent" name="content" rows="30" cols="100"></textarea></td>
+			</tr>
+		</table>
+	</form>
+	<div align="center" style="margin-top:15px;">
+		<button type="button" id="replyBtn">작성완료</button>
+		<button type="button" id="cancelBtn">취소</button>
+		<br><br>
+		<button type="button" onclick="location.href='bbslist.html'">목록으로</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+const url = new URL(location.href);
+const urlParams = url.searchParams;
+let seq = urlParams.get("seq");
+$("#seq").val(seq);
+
+let login = sessionStorage.getItem("login");
+let id = JSON.parse(login).id;
+$("#rid").val(id);
+
+$.ajax({
+	url:"http://localhost:3000/bbsdetail",
+	type:"get",
+	data:{"seq":seq},
+	success:function(bbs){
+		//alert("success");
+		//alert(JSON.stringify(bbs));
+		
+		$("#id").text(bbs.id);
+		$("#title").text(bbs.title);
+		$("#wdate").text(bbs.wdate);
+		$("#readcount").text(bbs.readcount);
+		$("#content").val(bbs.content);
+		
+		if(id != bbs.id){
+			$("#bbsupdate").hide();
+			$("#bbsdelete").hide();
+		}
+	},
+	error:function(){
+		alert("error");
+	}
+});
+
+$(document).ready(function(){
+	$("#reply").click(function(){
+		document.getElementById("replyDiv").style.display = "block";
+		$("#reply").hide();
+		$("#bbsupdate").hide();
+		$("#bbsdelete").hide();
+		$("#bbslist").hide();
+		document.getElementById("commentArea").style.display = "none";
+	});
+	
+	$("#cancelBtn").click(function(){
+		if(confirm("취소하시겠습니까?")){
+			document.getElementById("replyDiv").style.display = "none";
+			document.getElementById("commentArea").style.display = "block";
+			$("#reply").show();
+			$("#bbslist").show();
+			if(id == $("#id").text()){
+				$("#bbsupdate").show();
+				$("#bbsdelete").show();
+			}	
+		}
+	});
+	
+	$("#bbsdelete").click(function(){
+		if(confirm("글을 삭제하시겠습니까?")){
+			$.ajax({
+				url:"http://localhost:3000/bbsDel",
+				type:"get",
+				data:{"seq":seq},
+				success:function(data){
+					if(data == "YES"){
+						alert("삭제되었습니다.");
+						location.href="bbslist.html";
+					}else{
+						alert("삭제하지 못했습니다.");
+					}
+				},
+				error:function(){
+					alert("bbsDel error");
+				}
+			});
+		}
+	});
+	
+	$("#bbsupdate").click(function(){
+		if(confirm("글을 수정하시겠습니까?")){
+			location.href="bbsUpdate.html?seq="+seq;
+		}
+	});
+	
+	$("#replyBtn").click(function(){
+		let params = $("#frm").serialize();
+		$.ajax({
+			url:"http://localhost:3000/bbsReply",
+			type:"get",
+			data:params,
+			success:function(data){
+				if(data == "YES"){
+					alert("글이 등록되었습니다.");
+					location.href="bbslist.html";
+				}else{
+					alert("글이 등록되지 않았습니다.");
+				}
+			},
+			error:function(){
+				alert("reply error");
+			}
+		});
+	});
+});
+
+</script>
+</body>
+</html>

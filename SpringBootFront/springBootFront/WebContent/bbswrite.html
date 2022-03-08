@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>bbswrite</title>
+</head>
+<body>
+<div align="center">
+	<form id="frm">
+		<table border="1">
+			<tr>
+				<th>작성자</th>
+				<td><input id="id" name="id" readonly></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><input id="title" name="title"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea id="content" name="content" rows="30" cols="100"></textarea></td>
+			</tr>
+		</table>
+	</form>
+	<div align="center" style="margin-top:15px;">
+		<button type="button" id="writeBtn">작성완료</button><br><br>
+		<button type="button" onclick="location.href='bbslist.html'">목록으로</button>
+	</div>
+</div>
+<script type="text/javascript">
+let login = sessionStorage.getItem("login");
+let id = JSON.parse(login).id;
+$("#id").val(id);
+
+
+$(document).ready(function(){
+	$("#writeBtn").click(function(){
+		let params = $("#frm").serialize()
+		$.ajax({
+			url:"http://localhost:3000/bbsWrite",
+			type:"get",
+			data:params,
+			success:function(data){
+				//alert("success");
+				if(data == "YES"){
+					alert("글이 등록되었습니다.");
+					location.href="bbslist.html";
+				}else{
+					alert("글이 등록되지 않았습니다.");
+				}
+			},
+			error:function(){
+				alert("error");
+			}
+		});
+	});
+});
+</script>
+</body>
+</html>
